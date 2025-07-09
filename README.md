@@ -40,6 +40,3 @@ npm run deploy
 
 ## 연락처
 GitHub을 통해 연락주세요!
-=======
-# unionday.github.io
->>>>>>> a6ff7aa4a6731d061dfb41367ac4972637abd367
