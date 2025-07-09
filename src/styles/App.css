@@ -1,0 +1,610 @@
+/* Apple-inspired CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #1d1d1f;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 0.25rem;
+}
+
+.logo .title {
+  font-size: 0.875rem;
+  color: #86868b;
+  font-weight: 400;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover {
+  color: #007aff;
+}
+
+/* App Body Layout */
+.app-body {
+  flex: 1;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 6rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007aff, #5856d6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+  overflow: hidden;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-placeholder {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.profile-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1d1d1f;
+}
+
+.profile-section p {
+  color: #86868b;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.age {
+  font-size: 0.8rem !important;
+  color: #007aff;
+  font-weight: 500;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #1d1d1f;
+  width: 100%;
+}
+
+.nav-item:hover {
+  background: rgba(0, 122, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.nav-item.active {
+  background: #007aff;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 122, 255, 0.3);
+}
+
+.nav-icon {
+  font-size: 1.1rem;
+}
+
+.nav-label {
+  font-weight: 500;
+}
+
+/* Sub Navigation */
+.sub-nav {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(0, 122, 255, 0.2);
+}
+
+.sub-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-size: 0.8rem;
+  color: #86868b;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.sub-nav-item:hover {
+  background: rgba(0, 122, 255, 0.05);
+  color: #1d1d1f;
+}
+
+.sub-nav-item.active {
+  background: rgba(0, 122, 255, 0.1);
+  color: #007aff;
+  font-weight: 500;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+}
+
+.dashboard-content {
+  padding: 2rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1d1d1f;
+}
+
+/* Profile Card Styles */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  flex-shrink: 0;
+}
+
+.profile-main-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 0.5rem;
+}
+
+.profile-age {
+  font-size: 1.1rem;
+  color: #007aff;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.profile-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+}
+
+.contact-link {
+  color: #007aff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #005bb5;
+  text-decoration: underline;
+}
+
+/* Card Styles */
+.intro-card,
+.experience-card,
+.security-card,
+.contact-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.intro-card p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #1d1d1f;
+}
+
+.intro-card strong {
+  color: #007aff;
+  font-weight: 600;
+}
+
+/* Experience Section */
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.company-info h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.position,
+.duration {
+  background: #007aff;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.duration {
+  background: #86868b;
+}
+
+.role-description {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 122, 255, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #007aff;
+}
+
+.role-description h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1d1d1f;
+}
+
+.role-description p {
+  margin-bottom: 0.75rem;
+  color: #1d1d1f;
+  font-weight: 500;
+}
+
+.role-description ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.role-description li {
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.role-description li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #007aff;
+  font-size: 0.8rem;
+}
+
+.role-description ul ul {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.role-description ul ul li {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.role-description strong {
+  color: #007aff;
+  font-weight: 600;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skill-category h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1d1d1f;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: rgba(134, 134, 139, 0.1);
+  color: #1d1d1f;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-tag.primary {
+  background: linear-gradient(135deg, #007aff, #5856d6);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 122, 255, 0.3);
+}
+
+/* Security Section */
+.security-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.security-item {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.security-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1d1d1f;
+}
+
+.security-item p {
+  color: #86868b;
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-info {
+  margin-top: 1.5rem;
+}
+
+/* Footer Styles */
+.footer {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-info p {
+  color: #86868b;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: #86868b;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #007aff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-body {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .header-nav {
+    justify-content: center;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .company-info {
+    justify-content: center;
+  }
+  
+  .skill-tags {
+    justify-content: center;
+  }
+  
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-contact {
+    align-items: center;
+  }
+}
+
+/* Smooth animations */
+* {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 122, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 122, 255, 0.5);
+} 
