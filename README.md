@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 이학성 개발자 포트폴리오
 
 Apple 스타일의 모던한 React 기반 자기소개 페이지입니다.
@@ -40,3 +41,6 @@ npm run deploy
 
 ## 연락처
 GitHub을 통해 연락주세요!
+=======
+# unionday.github.io
+>>>>>>> a6ff7aa4a6731d061dfb41367ac4972637abd367
