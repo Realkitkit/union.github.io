@@ -42,9 +42,11 @@ function Sidebar({ activeSection, setActiveSection, activeExperience, setActiveE
               >
                 <span className="nav-icon">{item.icon}</span>
                 <span className="nav-label">{item.label}</span>
+                {activeSection === item.id && <span className="active-indicator">●</span>}
               </button>
               
-              {item.id === 'experience' && activeSection === 'experience' && (
+              {/* 경력 섹션의 서브메뉴는 항상 표시 */}
+              {item.id === 'experience' && (
                 <div className="sub-nav">
                   {experienceItems.map(subItem => (
                     <button
@@ -61,6 +63,21 @@ function Sidebar({ activeSection, setActiveSection, activeExperience, setActiveE
             </div>
           ))}
         </nav>
+        
+        {/* 현재 위치 표시 */}
+        <div className="current-position">
+          <div className="position-indicator">
+            <span className="position-text">현재 위치</span>
+            <div className="position-bar">
+              <div 
+                className="position-progress" 
+                style={{
+                  width: `${((menuItems.findIndex(item => item.id === activeSection) + 1) / menuItems.length) * 100}%`
+                }}
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
     </aside>
   );

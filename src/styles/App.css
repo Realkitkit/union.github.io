@@ -149,6 +149,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .nav-item {
@@ -165,6 +166,7 @@ body {
   font-size: 0.9rem;
   color: #1d1d1f;
   width: 100%;
+  position: relative;
 }
 
 .nav-item:hover {
@@ -184,6 +186,18 @@ body {
 
 .nav-label {
   font-weight: 500;
+  flex: 1;
+}
+
+.active-indicator {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.6rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
 
 /* Sub Navigation */
@@ -222,6 +236,38 @@ body {
   font-weight: 500;
 }
 
+/* Current Position Indicator */
+.current-position {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+}
+
+.position-indicator {
+  text-align: center;
+}
+
+.position-text {
+  font-size: 0.75rem;
+  color: #86868b;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.position-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 122, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.position-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #007aff, #5856d6);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
 /* Main Content Styles */
 .main-content {
   flex: 1;
@@ -234,11 +280,23 @@ body {
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  min-height: 600px;
+  height: 80vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .dashboard-content {
   padding: 2rem;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 4rem 0;
+  margin-bottom: 0;
+}
+
+.section:last-child {
+  margin-bottom: 4rem;
 }
 
 .section h2 {
@@ -590,21 +648,21 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
+/* Scrollbar Styling */
+.dashboard::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
+.dashboard::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb {
+.dashboard::-webkit-scrollbar-thumb {
   background: rgba(0, 122, 255, 0.3);
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.dashboard::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 122, 255, 0.5);
 } 
